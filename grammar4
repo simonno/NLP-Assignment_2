@@ -1,3 +1,4 @@
+
 # Symbols in the grammar are case-sensitive.
 #
 # This grammar uses a convention that
@@ -20,6 +21,7 @@
 # Rules for creating full sentences.
 
 1	ROOT	S .
+1	ROOT	S .
 1   SBAR    COMP S
 
 # The basic grammar rules.  Here's what the abbreviations stand for:
@@ -38,16 +40,27 @@
 1   VP  Vt SBAR
 2   VP  VP PP
 1	VP	VBZ VPZ
-1	VPZ ADJP
+1	VPZ ADJPA
+1	VPZ ADJPAN
 1   VPZ VBG NP
 1   VP  VP CC VP
 2	NP  NNP
-2	NP	DT NN
+2	NP	DT NNA
+2	NP	DT NNAN
+2	NP	a NNA
+2	NP	an NNAN
 1   NP  NP CC NP
 1   PP  IN NP
-1   NN  JJ  NN
-2   ADJP    JJ
-1   ADJP    RB ADJP
+1   NNA  ADJPA  NNA
+1   NNA  ADJPA  NNAN
+1   NNAN  ADJPAN  NNA
+1   NNAN  ADJPAN  NNAN
+3   ADJPA    JJA
+1   ADJPA    RBA ADJPA
+1   ADJPA    RBA ADJPAN
+1   ADJPAN    JJAN
+# 1   ADJPAN    RBAN ADJPA
+# 1   ADJPAN    RBAN ADJPAN
 
 # Vocabulary.  Your program can see that "ate" is a terminal
 # symbol because there exists no rule for rewriting it.
@@ -67,19 +80,21 @@
 2	VBZ	is
 
 2	DT	the
-1	DT	a
 
 1	NNP	Sally
 1	NNP	it
-1	NN	president
-1	NN	sandwich
-1	NN	proposal
-1	NN	desk
+1	NNA	president
+1	NNA	sandwich
+1	NNA	proposal
+1	NNA	desk
+1	NNAN	apple
 
-1	JJ	perplexed
-1   JJ  lazy
+1	JJA	perplexed
+1   JJA  lazy
+1   JJA  lazy
+1   JJAN  ambivalent
 
-1	RB	very
+1	RBA	very
 
 1	IN	on
 

@@ -30,15 +30,24 @@ class PCFG(object):
     def is_terminal(self, symbol):
         return symbol not in self._rules
 
-    def gen(self, symbol):
+    def gen(self, symbol, tree_structures=False):
         if self.is_terminal(symbol):
-            return symbol
+            if tree_structures:
+                return "{0} ".format(symbol)
+            else:
+                return symbol
         else:
             expansion = self.random_expansion(symbol)
-            return " ".join(self.gen(s) for s in expansion)
+            if tree_structures:
+                sub_tree = "({0} ".format(symbol)
+                for s in expansion:
+                    sub_tree += self.gen(s, tree_structures)
+                return sub_tree + ")"
+            else:
+                return " ".join(self.gen(s, tree_structures) for s in expansion)
 
-    def random_sent(self):
-        return self.gen("ROOT")
+    def random_sent(self, tree_structures=False):
+        return self.gen("ROOT", tree_structures)
 
     def random_expansion(self, symbol):
         """
@@ -52,10 +61,10 @@ class PCFG(object):
         return r
 
 
-def main(grammar_file_name, sentences_num=1):
+def main(grammar_file_name, sentences_num=1, tree_structures=False):
     pcfg = PCFG.from_file(grammar_file_name)
     for i in range(sentences_num):
-        print(pcfg.random_sent())
+        print(pcfg.random_sent(tree_structures))
 
 
 if __name__ == '__main__':
@@ -64,4 +73,4 @@ if __name__ == '__main__':
     parser.add_argument("-grammar_path", type=str, help="Path of grammar file.")
     parser.add_argument("-t", action='store_true', default=False, help="True for derivation tree is, False other.")
     args = parser.parse_args()
-    main(args.grammar_path, args.n)
+    main(args.grammar_path, args.n, args.t)

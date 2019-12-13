@@ -21,7 +21,8 @@
 # Rules for creating full sentences.
 
 1	ROOT	S .
-1	ROOT	S .
+1	ROOT	did SBase ?
+1	ROOT	will SBase ?
 1   SBAR    COMP S
 
 # The basic grammar rules.  Here's what the abbreviations stand for:
@@ -33,11 +34,19 @@
 #    Prep = preposition
 #    Adj = adjective
 
+1	SBase	NP VPBase
+3   VPBase  VtBase NP
+3   VPBase  VtBase PP
+1   VpBase  VtBase SBAR
+2   VPBase  VPBase PP
+1	VPBase	VBZBase VPZ
+
 1	S	NP VP
+1   VP  VP CC VP
 4   VP  Vi
 3   VP  Vt NP
 3   VP  Vt PP
-1   VP  Vt SBAR
+1   Vp  Vt SBAR
 2   VP  VP PP
 1	VP	VBZ VPZ
 1	VPZ ADJPA
@@ -71,6 +80,7 @@
 1	Vi	sighed
 
 1	Vt	ate
+1	VtBase	eat
 2	VBG eating
 
 1	Vt	wanted
@@ -101,4 +111,3 @@
 1	COMP	that
 
 1   CC  and
-

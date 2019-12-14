@@ -34,6 +34,7 @@
 #    Prep = preposition
 #    Adj = adjective
 
+
 1	SBase	NP VPBase
 3   VPBase  VtBase NP
 3   VPBase  VtBase PP
@@ -44,6 +45,7 @@
 1   VP  VP CC VP
 4   VP  Vi
 3   VP  Vt NP
+2   VP  Vt NP ADVP
 3   VP  Vt PP
 1   VP  Vt SBAR
 1	VP	VBZ VPZ
@@ -52,22 +54,25 @@
 1   VPZ VBG NP
 1   VP  VP CC VP
 2	NP  NNP
+1	NP  EX
 2	NP	DT NNA
 2	NP	DT NNAN
 2	NP	a NNA
 2	NP	an NNAN
 1   NP  NP CC NP
 1   PP  IN NP
-1   NNA  ADJPA  NNA
-1   NNA  ADJPA  NNAN
-1   NNAN  ADJPAN  NNA
-1   NNAN  ADJPAN  NNAN
+3   NNA  ADJPA  NNA
+3   NNA  ADJPA  NNAN
+1   NNA  NNA  NNA
+1   NNA  NNA  NNAN
+3   NNAN  ADJPAN  NNA
+3   NNAN  ADJPAN  NNAN
+1   NNAN  NNAN  NNA
+1   NNAN  NNAN  NNAN
 3   ADJPA    JJA
 1   ADJPA    RBA ADJPA
 1   ADJPA    RBA ADJPAN
 1   ADJPAN    JJAN
-# 1   ADJPAN    RBAN ADJPA
-# 1   ADJPAN    RBAN ADJPAN
 
 # Vocabulary.  Your program can see that "ate" is a terminal
 # symbol because there exists no rule for rewriting it.
@@ -86,24 +91,35 @@
 1	Vt thought
 1	Vt worked
 2	VBZ	is
+2	VBZBase	is
 
 2	DT	the
 
-1	NNP	Sally
-1	NNP	it
-1	NNA	president
-1	NNA	sandwich
-1	NNA	proposal
-1	NNA	desk
-1	NNAN	apple
+5	NNP	Sally
+5	NNP	it
+5	NNA	president
+5	NNA	sandwich
+5	NNA	proposal
+5	NNA	reason
+5	NNA	tech
+5	NNA	desk
+5	NNA	year
+5	NNA	picture
+5	NNAN	apple
 
 1	JJA	perplexed
 1   JJA  lazy
+1   JJA  safe
 1   JJAN  ambivalent
 
 1	RBA	very
+1	RBA	not
+
+1   ADVP back
+1	EX	there
 
 1	IN	on
+1	IN	in
 
 1	COMP	that
 

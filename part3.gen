@@ -1,0 +1,5 @@
+(ROOT (S (NP (NNP Sally ))(VP (Vt wanted )(SBAR (COMP that )(S (NP (DT the )(NN desk ))(VP (Vt worked )(PP (IN on )(NP (NNP Sally )))))))). )
+(ROOT (S (NP (DT a )(NN sandwich ))(VP (Vt wanted )(NP (NNP it )))). )
+(ROOT (S (NP (DT the )(NN sandwich ))(VP (Vi sighed ))). )
+(ROOT (S (NP (NNP Sally ))(VP (Vt perplexed )(NP (DT the )(NN president )))). )
+(ROOT (S (NP (NP (DT the )(NN desk ))(CC and )(NP (NNP Sally )))(VP (Vt worked )(NP (DT a )(NN proposal )))). )

@@ -35,17 +35,16 @@
 4   VP  Vi
 3   VP  Vt NP
 3   VP  Vt PP
-1   VP  Vt SBAR
-2   VP  VP PP
+2   VP  Vt SBAR
 1	VP	VBZ VPZ
 1	VPZ ADJP
 1   VPZ VBG NP
 1   VP  VP CC VP
 2	NP  NNP
-2	NP	DT NN
+3	NP	DT NN
 1   NP  NP CC NP
 1   PP  IN NP
-1   NN  JJ  NN
+1   NN  ADJP  NN
 2   ADJP    JJ
 1   ADJP    RB ADJP
 
@@ -69,10 +68,11 @@
 2	DT	the
 1	DT	a
 
-1	NNP	Sally
+2	NNP	Sally
 1	NNP	it
-1	NN	president
-1	NN	sandwich
+
+3	NN	president
+2	NN	sandwich
 1	NN	proposal
 1	NN	desk
 

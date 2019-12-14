@@ -46,9 +46,9 @@
 # that a preterminal is a special kind of nonterminal.
 
 4	Verb	ate
-1	Verb	wanted
-0	Verb	kissed
-1	Verb	understood
+5	Verb	wanted
+2	Verb	kissed
+2	Verb	understood
 2	Verb	pickled
 
 4	Det	the

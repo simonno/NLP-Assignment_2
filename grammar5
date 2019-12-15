@@ -24,6 +24,7 @@
 1	ROOT	S .
 1	ROOT	WH SBase ?
 1   SBAR    COMP S
+1   SBAR    TO VPBase
 
 # The basic grammar rules.  Here's what the abbreviations stand for:
 #    S  = sentence
@@ -42,6 +43,7 @@
 1	VPBase	VBZBase VPZ
 
 1	S	NP VP
+1	S	VP
 1   VP  VP CC VP
 4   VP  Vi
 3   VP  Vt NP
@@ -84,6 +86,8 @@
 
 1	Vt	ate
 1	VtBase	eat
+1	VtBase	do
+1	Vt	do
 2	VBG eating
 
 1	Vt	wanted
@@ -120,6 +124,9 @@
 
 1	IN	on
 1	IN	in
+1	IN	for
+1	IN	at
+1	TO	to
 
 1	COMP	that
 
